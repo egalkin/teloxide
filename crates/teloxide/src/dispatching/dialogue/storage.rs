@@ -12,6 +12,9 @@ mod sqlite_storage;
 #[cfg(feature = "postgres-storage-nativetls")]
 mod postgres_storage;
 
+#[cfg(feature = "skytable-storage")]
+mod skytable_storage;
+
 use futures::future::BoxFuture;
 use teloxide_core::types::ChatId;
 
@@ -30,6 +33,9 @@ pub use sqlite_storage::{SqliteStorage, SqliteStorageError};
 
 #[cfg(feature = "postgres-storage-nativetls")]
 pub use postgres_storage::{PostgresStorage, PostgresStorageError};
+
+#[cfg(feature = "skytable-storage")]
+pub use skytable_storage::{SkytableStorage, SkytableStorageError};
 
 /// A storage with an erased error type.
 pub type ErasedStorage<D> =

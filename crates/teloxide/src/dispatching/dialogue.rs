@@ -102,6 +102,9 @@ pub use self::{SqliteStorage, SqliteStorageError};
 #[cfg(feature = "postgres-storage-nativetls")]
 pub use self::{PostgresStorage, PostgresStorageError};
 
+#[cfg(feature = "skytable-storage")]
+pub use self::{SkytableStorage, SkytableStorageError};
+
 pub use get_chat_id::GetChatId;
 pub use storage::*;
 
